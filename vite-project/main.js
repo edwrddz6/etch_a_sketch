@@ -4,6 +4,7 @@ const gridSizeValue = document.getElementById('gridSizeValue');
 const clearButton = document.getElementById('clear');
 const eraserButton = document.getElementById('eraser');
 
+let isMouseDown = false;
 let eraserMode = false;
 
 function createGrid(size) {
@@ -17,12 +18,27 @@ function createGrid(size) {
     newDiv.style.height = `${squareSize}px`;
     newDiv.classList.add('square');
     squaresContainer.appendChild(newDiv);
-    
-    newDiv.addEventListener('mouseover', function(event) {
+
+    newDiv.addEventListener('mousedown', function(event) {
+      isMouseDown = true;
       if (eraserMode) {
         event.target.style.backgroundColor = 'lightgrey';
       } else {
         event.target.style.backgroundColor = 'darkgray';
+      }
+    });
+
+    newDiv.addEventListener('mouseup', function() {
+      isMouseDown = false;
+    });
+
+    newDiv.addEventListener('mousemove', function(event) {
+      if (isMouseDown) {
+        if (eraserMode) {
+          event.target.style.backgroundColor = 'lightgrey';
+        } else {
+          event.target.style.backgroundColor = 'darkgray';
+        }
       }
     });
   }
