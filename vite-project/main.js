@@ -1,14 +1,23 @@
 const squaresContainer = document.getElementById('squares');
+const gridSizeSlider = document.getElementById('gridSizeSlider');
+const gridSizeValue = document.getElementById('gridSizeValue');
 const clearButton = document.getElementById('clear');
 const eraserButton = document.getElementById('eraser');
 
 let eraserMode = false;
 
-function createGrid() {
-  for (let i = 0; i < 16 * 16; i++) {
-    const newDiv = document.createElement('div');
-    squaresContainer.appendChild(newDiv);
+function createGrid(size) {
+  squaresContainer.innerHTML = '';
 
+  const squareSize = 660 / size;
+
+  for (let i = 0; i < size * size; i++) {
+    const newDiv = document.createElement('div');
+    newDiv.style.width = `${squareSize}px`;
+    newDiv.style.height = `${squareSize}px`;
+    newDiv.classList.add('square');
+    squaresContainer.appendChild(newDiv);
+    
     newDiv.addEventListener('mouseover', function(event) {
       if (eraserMode) {
         event.target.style.backgroundColor = 'lightgrey';
@@ -19,7 +28,15 @@ function createGrid() {
   }
 }
 
-createGrid();
+createGrid(16);
+
+function updateGridSize() {
+  const gridSize = gridSizeSlider.value;
+  gridSizeValue.textContent = `${gridSize}x${gridSize}`;
+  createGrid(gridSize);
+}
+
+gridSizeSlider.addEventListener('input', updateGridSize);
 
 function toggleEraserMode() {
   eraserMode = !eraserMode;
@@ -29,7 +46,7 @@ function toggleEraserMode() {
 clearButton.addEventListener('click', function() {
   const gridSquares = document.querySelectorAll('#squares div');
   gridSquares.forEach(square => {
-    square.style.backgroundColor = 'lightgray';
+    square.style.backgroundColor = 'lightgrey';
   });
   eraserMode = false;
   eraserButton.classList.remove('active');
