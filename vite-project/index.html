@@ -1,26 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>Etch-A-Sketch</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>Etch-A-Sketch</title>
+</head>
+<body>
+  <img src="etch_sim.png" alt="Header Image" id="headImage"> 
 
-  <body>
-    <img src="etch_sim.png" alt="Header Image" id="headImage"> 
+  <div class="controls">
+    <button id="eraser">Eraser</button>
+    <button id="clear">Clear</button>
+    <input type="range" min="16" max="64" value="16" id="gridSizeSlider">
+    <span id="gridSizeValue">16x16</span>
+  </div>
 
-    <div class="controls">
-      <button id="eraser">Eraser</button>
-      <button  id="clear">Clear</button>
-    </div>
+  <div id="squares"></div>
 
-
-    <div id="squares"></div>
-
-
-    <script type="module" src="/main.js"></script>
-    <!-- https://www.canva.com/colors/color-palettes/hawaiian-blossom/ -->
-  </body>
-
+  <script type="module" src="/main.js"></script>
+  <!-- https://www.canva.com/colors/color-palettes/hawaiian-blossom/ -->
+</body>
 </html>
