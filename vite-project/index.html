@@ -10,10 +10,23 @@
   <img src="etch_sim.png" alt="Header Image" id="headImage"> 
 
   <div class="controls">
-    <button id="eraser">Eraser</button>
-    <button id="clear">Clear</button>
-    <input type="range" min="16" max="64" value="16" id="gridSizeSlider">
-    <span id="gridSizeValue">16x16</span>
+    <div class="color-picker-container">
+      <input type="color" id="colorPicker" value="#000000">
+      <span class="color-picker-label">Color Select</span>
+    </div>
+
+    <div class="control-section">
+      <input type="range" min="16" max="64" value="16" id="gridSizeSlider">
+      <div class="grid-size-wrapper">
+        <span class="grid-size-label">Grid Size:</span>
+        <span id="gridSizeValue">16x16</span>
+      </div>
+    </div>
+
+    <div class="grid-size-value-container">
+      <button id="eraser">Eraser</button>
+      <button id="clear">Clear</button>
+    </div>
   </div>
 
   <div id="squares"></div>
