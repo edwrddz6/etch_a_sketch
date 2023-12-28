@@ -6,6 +6,7 @@ const eraserButton = document.getElementById('eraser');
 
 let isMouseDown = false;
 let eraserMode = false;
+let currentColor = '#000000';
 
 function createGrid(size) {
   squaresContainer.innerHTML = '';
@@ -24,7 +25,7 @@ function createGrid(size) {
       if (eraserMode) {
         event.target.style.backgroundColor = 'lightgrey';
       } else {
-        event.target.style.backgroundColor = 'darkgray';
+        event.target.style.backgroundColor = currentColor;
       }
     });
 
@@ -37,7 +38,7 @@ function createGrid(size) {
         if (eraserMode) {
           event.target.style.backgroundColor = 'lightgrey';
         } else {
-          event.target.style.backgroundColor = 'darkgray';
+          event.target.style.backgroundColor = currentColor;
         }
       }
     });
@@ -69,3 +70,17 @@ clearButton.addEventListener('click', function() {
 });
 
 eraserButton.addEventListener('click', toggleEraserMode);
+
+
+colorPicker.addEventListener('input', function(event) {
+  currentColor = event.target.value;
+
+  if (!eraserMode) {
+    const gridSquares = document.querySelectorAll('#squares div');
+    gridSquares.forEach(square => {
+      if (square.classList.contains('colored')) {
+        square.style.backgroundColor = currentColor;
+      }
+    });
+  }
+});
