@@ -1,3 +1,7 @@
+:root {
+  --accentColor: #FEDA15;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -150,4 +154,29 @@ button {
 #colorPicker::-moz-color-swatch {
   border-radius: 8px;
   border: 5px solid #e5f20d;
+}
+
+.squares-container {
+  padding: .5rem .5rem;
+  border: 1rem solid var(--accentColor);
+  border-image: repeating-linear-gradient(45deg, transparent, transparent 5px, 
+  var(--accentColor) 6px, var(--accentColor) 15px, transparent 16px, transparent 20px) 20/1rem;
+}
+
+#footer {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  margin-top: 30px;
+}
+
+.github-link {
+  margin-left: 5px;
+}
+
+.small-logo {
+  width: 30px; 
+  height: auto; 
+  margin-top: 5px;
 }
