@@ -4,7 +4,7 @@ Etch-A-Sketch Simulator is a basic web application between a sketchpad and an Et
 
 ## Instructions
 
-1. Open this link: [Etch-A-Sketch Simulator](https://edwrddz6.github.io/etch-a-sketch/)
+1. Open this link: [Etch-A-Sketch Simulator](https://edwrddz6.github.io/etch_a_sketch/)
 2. Using the cursor, click and hold on your mouse to draw on the main grid.
 3. To change color, click on 'Color Selector'.
 4. To increase the grid size, move the slider from left to right.
