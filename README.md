@@ -2,7 +2,7 @@
 
 # Etch-A-Sketch Simulator
 
-Etch-A-Sketch Simulator is a basic web application between a sketchpad and an Etch-A-Sketch. I built this project to demonstrate my DOM manipulation skills.
+[Etch-A-Sketch Simulator](https://edwrddz6.github.io/etch_a_sketch/) is a basic web application between a sketchpad and an Etch-A-Sketch. I built this project to demonstrate my DOM manipulation skills.
 
 ### List of Tech Used
 
